@@ -1,0 +1,23 @@
+.navbar-brand img{
+    max-width: 80px;
+    height: auto;
+}
+.navbar-nav{
+    a{
+        color: #434343;
+        &.active, &:hover {
+            color: #0BB8E3;
+        }
+    }
+}
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+    .navbar-nav{
+        padding-top: 12px;
+        a{
+            display: block;
+            padding: 8px 0px;
+            border-top: 1px solid #ddd;
+        }
+    }
+ }

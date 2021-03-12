@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    color: #434343;
+}
+a{
+    text-decoration: none !important;
+}
+.cursor-pointer{
+    cursor: pointer;
+    outline: none;
+}
+.social-links a{
+    font-size: 15px;
+    color: #888;
+    height: 2rem;
+    width: 2rem;
+    display: inline-block;
+    border-radius: 100%;
+    border: 1px solid #888;
+    line-height: 2rem;
+    text-align: center;
+    margin-right: 9px;
+    vertical-align: middle;
+    &.cb{
+        background: url('assets/images/cb.png') no-repeat center center;
+    }
+}
+section.main-section{
+    min-height: calc(100vh - 310px);
+}
