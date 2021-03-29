@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ExtraOptions, RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { FormsModule }   from '@angular/forms';
 
 import { BaseLayoutComponent } from './base-layout.component';
 import { HomePageComponent } from '../homepage/homepage.component';
@@ -40,6 +41,7 @@ const broutes:Routes = [
   ],
   imports: [
     CommonModule,
+    FormsModule,
     RouterModule.forChild(broutes),
   ],
 })
