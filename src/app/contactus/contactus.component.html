@@ -4,47 +4,49 @@
     </div>
 </section>
 
-<section class="py-5"> 
+<section class="py-5">
     <div class="container">
         <div class="row">
             <div class="col-md-7">
                 <h5 class="mb-3">Contact Us</h5>
-                <form action="#">
+                <p *ngIf="isSent">Your message has been sent successfully.</p>
+                <form (submit)="sendEmail($event)" *ngIf="!isSent"  #contacUs="ngForm">
                     <div class="form-row">
                         <div class="col-md-6">
-                            <label for="">First Name</label>
-                            <input type="text" class="form-control" placeholder="First Name">
+                            <label for="first_name">First Name*</label>
+                            <input type="text" class="form-control" name="first_name" ngModel placeholder="First Name" required>
                         </div>
                         <div class="col-md-6">
-                            <label for="">Last Name</label>
-                            <input type="text" class="form-control" placeholder="Last Name">
+                            <label for="last_name">Last Name</label>
+                            <input type="text" class="form-control" name="last_name" placeholder="Last Name">
                         </div>
                     </div>
                     <div class="form-row my-4">
                         <div class="col-md-6">
-                            <label for="">Email Id</label>
-                            <input type="email" class="form-control" placeholder="Email Id">
+                            <label for="mail">Email Id</label>
+                            <input type="email" class="form-control" name="mail" placeholder="Email Id" [email]="true">
                         </div>
                         <div class="col-md-6">
-                            <label for="">Phone Number</label>
-                            <input type="text" class="form-control" placeholder="Phone Number">
+                            <label for="phone">Phone Number*</label>
+                            <input type="text" class="form-control" name="phone" ngModel placeholder="Phone Number" required [maxlength]="10" [minlength]="10">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="">Message</label>
-                        <textarea class="form-control" placeholder="Message"></textarea>
+                        <label for="message">Message*</label>
+                        <textarea class="form-control" name="message" ngModel placeholder="Message" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-success">Submit</button>
+                    <p><strong>Note:</strong> Please fill all required(*) field before submit the form.</p>
+                    <button type="submit" class="btn btn-success" [disabled]="!contacUs.form.valid">Submit</button>
                 </form>
             </div>
             <div class="col-md-5 pl-md-4">
                 <h5>Get In Touch</h5>
-                <p><i class="fa fa-envelope"></i> info@domain.com</p>
-                <p><i class="fa fa-phone"></i> 789789798</p>
+                <p><i class="fa fa-envelope"></i> alldaysservice@gmail.com</p>
+                <p><i class="fa fa-phone"></i> 9795873750</p>
 
                 <div class="my-4">
                     <h5>Address</h5>
-                    <p><i class="fa fa-location-arrow"></i> Delhi - 176302</p>
+                    <p><i class="fa fa-location-arrow"></i> Delhi - 110025</p>
                 </div>
 
                 <h5>Follow us</h5>
@@ -52,10 +54,8 @@
                     <a target="_blank" href="https://twitter.com/handy"><i class="fab fa-twitter"></i></a>
                     <a target="_blank" href="https://facebook.com/handyhq"><i class="fab fa-facebook"></i></a>
                     <a target="_blank" href="http://instagram.com/handy_hq"><i class="fab fa-instagram"></i></a>
-                    <a target="_blank" href="https://plus.google.com/+Handy/posts"><i class="fab fa-google-plus"></i></a>
-                    <a target="_blank" href="https://en.wikipedia.org/wiki/Handy_(company)"><i class="fab fa-wikipedia-w"></i></a>
-                    <a target="_blank" href="https://www.linkedin.com/company/handyhq"><i class="fab fa-linkedin"></i></a>
-                    <a target="_blank" class="cb" href="https://crunchbase.com/organization/handybook"></a>
+                    <a target="_blank" href="https://www.linkedin.com/company/handyhq"><i
+                            class="fab fa-linkedin"></i></a>
                 </div>
             </div>
         </div>

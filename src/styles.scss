@@ -21,9 +21,9 @@ a{
     text-align: center;
     margin-right: 9px;
     vertical-align: middle;
-    &.cb{
-        background: url('assets/images/cb.png') no-repeat center center;
-    }
+    // &.cb{
+    //     background: url('assets/images/cb.png') no-repeat center center;
+    // }
 }
 section.main-section{
     min-height: calc(100vh - 310px);
